@@ -26,6 +26,8 @@
         android:layout_height="wrap_content"
 		android:layout_marginLeft="15dp"
 		android:layout_toRightOf="@id/icon"
+		android:singleLine="true"
+		android:ellipsize="end"
         android:textColor="?attr/colorOnSurfaceVariant"
         android:textSize="18sp"
         android:text="New project" />

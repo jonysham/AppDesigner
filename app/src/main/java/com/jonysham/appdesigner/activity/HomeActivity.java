@@ -1,5 +1,6 @@
 package com.jonysham.appdesigner.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,22 +12,27 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.navigation.NavigationView;
 import com.jonysham.appdesigner.adapter.ProjectListAdapter;
 import com.jonysham.appdesigner.databinding.ActivityHomeBinding;
 import com.jonysham.appdesigner.databinding.DialogEdittextBinding;
+import com.jonysham.appdesigner.BaseActivity;
 import com.jonysham.appdesigner.manager.project.ProjectManager;
 import com.jonysham.appdesigner.manager.project.ProjectNameErrorChecker;
 import com.jonysham.appdesigner.model.Project;
 import com.jonysham.appdesigner.util.AndroidUtil;
 import com.jonysham.appdesigner.R;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseActivity {
 
+	static final String GITHUB_URL = "https://github.com/jonysham/AppDesigner";
+	
     private ActivityHomeBinding binding;
 	private ProjectManager projectManager;
 	
     private ActionBarDrawerToggle drawerToggle;
     private DrawerLayout drawerLayout;
+	private NavigationView navigation;
 	
 	private RecyclerView recyclerProjects;
 	private ProjectListAdapter adapter;
@@ -49,7 +55,24 @@ public class HomeActivity extends AppCompatActivity {
 		binding.fab.setOnClickListener(v -> showDialogCreateProject());
     }
 
+	@SuppressLint("NonConstantResourceId")
     private void setupNavigation() {
+		navigation = binding.navigation;
+		navigation.setNavigationItemSelectedListener(item -> {
+			int id = item.getItemId();
+				
+			if (id == R.id.nav_settings) {
+				return true;
+			} else if (id == R.id.nav_info) {
+				return true;
+			} else if (id == R.id.nav_github) {
+				AndroidUtil.openUrl(GITHUB_URL, HomeActivity.this);
+				return true;
+			}
+				
+			return false;
+		});
+		
         drawerLayout = binding.drawerLayout;
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, binding.toolbar, R.string.app_name, R.string.app_name);
         drawerLayout.addDrawerListener(drawerToggle);
@@ -92,8 +115,8 @@ public class HomeActivity extends AppCompatActivity {
 	}
 	
 	private void updateAdapter() {
-		adapter.submitProjects(projectManager.getProjects());
 		int visible = projectManager.getProjects().size() == 0 ? View.GONE : View.VISIBLE;
+		adapter.submitProjects(projectManager.getProjects());
 		recyclerProjects.setVisibility(visible);
 	}
 	
@@ -103,7 +126,9 @@ public class HomeActivity extends AppCompatActivity {
 		final var edit = bind.inputEdit;
 		
 		input.setHint("Enter name");
-		edit.setText("NewProject" + AndroidUtil.getCurrentDate());
+		input.setCounterEnabled(true);
+		input.setCounterMaxLength(ProjectManager.MAX_NAME_LENGTH);
+		edit.setText("NewProject" + projectManager.getProjects().size());
 		
 		var dialog = new MaterialAlertDialogBuilder(this)
 		.setView(bind.getRoot())
@@ -128,6 +153,8 @@ public class HomeActivity extends AppCompatActivity {
 		final var edit = bind.inputEdit;
 		
 		input.setHint("Enter name");
+		input.setCounterEnabled(true);
+		input.setCounterMaxLength(ProjectManager.MAX_NAME_LENGTH);
 		edit.setText(project.getName());
 		
 		var dialog = new MaterialAlertDialogBuilder(this)

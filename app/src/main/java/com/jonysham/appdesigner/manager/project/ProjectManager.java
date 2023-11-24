@@ -17,6 +17,7 @@ import com.jonysham.appdesigner.util.FileUtil;
 public class ProjectManager {
 	
 	public static String ROOT_FOLDER;
+	public static int MAX_NAME_LENGTH = 16;
 	
 	private static ProjectManager instance;
 	

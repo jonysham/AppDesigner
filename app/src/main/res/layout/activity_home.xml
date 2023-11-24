@@ -70,6 +70,7 @@
 		app:menu="@menu/menu_home"
 		app:itemIconPadding="10dp"
 		app:itemIconSize="25dp"
+		app:itemTextAppearance="?@attr/textAppearanceBody1"
 		app:headerLayout="@layout/home_drawer_header"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

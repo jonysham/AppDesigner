@@ -3,8 +3,10 @@ package com.jonysham.appdesigner.manager.project;
 import android.text.Editable;
 import android.text.TextWatcher;
 import androidx.appcompat.app.AlertDialog;
+
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+
 import com.jonysham.appdesigner.model.Project;
 
 import java.util.List;
@@ -43,6 +45,9 @@ public class ProjectNameErrorChecker {
 					return;
 				} else if (text.contains("/")) {
 					disable("Illegal symbol \"/\"!");
+					return;
+				} else if (text.length() > ProjectManager.MAX_NAME_LENGTH) {
+					disable("Max name length " + ProjectManager.MAX_NAME_LENGTH + "!");
 					return;
 				}
 					

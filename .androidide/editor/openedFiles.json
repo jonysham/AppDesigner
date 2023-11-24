@@ -1,0 +1,20 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/AppDesigner/app/src/main/AndroidManifest.xml",
+      "selection": {
+        "end": {
+          "column": 50,
+          "index": 302,
+          "line": 7
+        },
+        "start": {
+          "column": 50,
+          "index": 302,
+          "line": 7
+        }
+      }
+    }
+  ],
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/AppDesigner/app/src/main/AndroidManifest.xml"
+}
