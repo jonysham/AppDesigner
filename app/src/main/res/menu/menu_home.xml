@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+		
+        <item
+            android:icon="@drawable/ic_settings"
+            android:id="@+id/nav_settings"
+            android:title="Settings"/>
+        
+		<item
+            android:icon="@drawable/ic_info"
+            android:id="@+id/nav_info"
+            android:title="About"/>
+		
+    </group>
+	
+	<group 
+		android:id="@+id/social_menu_group">
+
+        <item
+            android:icon="@drawable/ic_github"
+            android:id="@+id/nav_github"
+            android:title="Github"/>
+		
+    </group>
+	
+</menu>
