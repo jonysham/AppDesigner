@@ -2,7 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group>
-		
         <item
             android:icon="@drawable/ic_settings"
             android:id="@+id/nav_settings"
@@ -18,6 +17,16 @@
 	<group 
 		android:id="@+id/social_menu_group">
 
+		<item
+            android:icon="@drawable/ic_telegram"
+            android:id="@+id/nav_telegram"
+            android:title="Telegram"/>
+		
+		<item
+            android:icon="@drawable/ic_vk"
+            android:id="@+id/nav_vk"
+            android:title="VK Group"/>
+		
         <item
             android:icon="@drawable/ic_github"
             android:id="@+id/nav_github"
