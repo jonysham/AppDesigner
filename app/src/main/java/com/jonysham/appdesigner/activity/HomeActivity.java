@@ -11,13 +11,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.jonysham.appdesigner.R;
 import com.jonysham.appdesigner.adapter.ProjectListAdapter;
 import com.jonysham.appdesigner.databinding.ActivityHomeBinding;
 import com.jonysham.appdesigner.databinding.DialogEdittextBinding;
-import com.jonysham.appdesigner.manager.ProjectManager;
+import com.jonysham.appdesigner.manager.project.ProjectManager;
+import com.jonysham.appdesigner.manager.project.ProjectNameErrorChecker;
 import com.jonysham.appdesigner.model.Project;
 import com.jonysham.appdesigner.util.AndroidUtil;
+import com.jonysham.appdesigner.R;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -116,6 +117,9 @@ public class HomeActivity extends AppCompatActivity {
 		.create();
 		
 		dialog.show();
+		
+		ProjectNameErrorChecker errorChecker = new ProjectNameErrorChecker(dialog, edit, input, projectManager.getProjects(), null);
+		errorChecker.checkErrors();
 	}
 	
 	private void showDialogRenameProject(final Project project) {
@@ -139,6 +143,9 @@ public class HomeActivity extends AppCompatActivity {
 		.create();
 		
 		dialog.show();
+		
+		ProjectNameErrorChecker errorChecker = new ProjectNameErrorChecker(dialog, edit, input, projectManager.getProjects(), project);
+		errorChecker.checkErrors();
 	}
 	
 	private void showDialogDeleteProject(final Project project) {

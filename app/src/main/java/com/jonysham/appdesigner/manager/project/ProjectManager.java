@@ -1,12 +1,12 @@
-package com.jonysham.appdesigner.manager;
+package com.jonysham.appdesigner.manager.project;
 
 import java.io.IOException;
+import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.io.File;
 
 import androidx.annotation.NonNull;
 
