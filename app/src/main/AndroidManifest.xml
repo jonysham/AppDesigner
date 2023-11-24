@@ -22,6 +22,10 @@
         </activity>
 		
 		<activity
+			android:name=".activity.LayoutEditorActivity"
+			android:screenOrientation="portrait"/>
+		
+		<activity
 			android:name=".activity.CrashActivity"
 			android:screenOrientation="portrait"/>
 		

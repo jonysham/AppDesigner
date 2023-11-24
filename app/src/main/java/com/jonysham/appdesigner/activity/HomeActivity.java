@@ -189,6 +189,8 @@ public class HomeActivity extends BaseActivity {
 	
 	private void openProject(Project project) {
 		projectManager.openProject(project);
+		Intent intent = new Intent(this, LayoutEditorActivity.class);
+		startActivity(intent);
 	}
 	
 	@Override
