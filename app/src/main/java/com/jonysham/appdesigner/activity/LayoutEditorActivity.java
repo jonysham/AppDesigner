@@ -14,6 +14,7 @@ import com.jonysham.appdesigner.R;
 public class LayoutEditorActivity extends BaseActivity {
 	
 	private ActivityLayoutEditorBinding binding;
+	
 	private ActionBarDrawerToggle drawerToggle;
 	private DrawerLayout drawerLayout;
 	
@@ -27,10 +28,6 @@ public class LayoutEditorActivity extends BaseActivity {
 		setSupportActionBar(binding.toolbar);
 		getSupportActionBar().setTitle(getString(R.string.app_name));
 		
-		setupDrawer();
-	}
-	
-	private void setupDrawer() {
 		drawerLayout = binding.drawerLayout;
 		drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, binding.toolbar, R.string.app_name, R.string.app_name);
 		drawerLayout.addDrawerListener(drawerToggle);

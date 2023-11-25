@@ -25,8 +25,8 @@ public class BaseActivity extends AppCompatActivity {
 		app = AppDesigner.getInstance();
 		
         Thread.setDefaultUncaughtExceptionHandler(new CrashHandler(ctx));
-        getWindow().setStatusBarColor(SurfaceColors.SURFACE_0.getColor(this));
-		getWindow().setBackgroundDrawable(new ColorDrawable(SurfaceColors.SURFACE_0.getColor(this)));
+        //getWindow().setStatusBarColor(SurfaceColors.SURFACE_0.getColor(this));
+		//getWindow().setBackgroundDrawable(new ColorDrawable(SurfaceColors.SURFACE_0.getColor(this)));
     }
 	
     @Override
