@@ -1,0 +1,35 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/AppDesigner/app/src/main/java/com/jonysham/appdesigner/editor/model/Attributes.java",
+      "selection": {
+        "end": {
+          "column": 1,
+          "index": 3651,
+          "line": 87
+        },
+        "start": {
+          "column": 1,
+          "index": 3651,
+          "line": 87
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/AppDesigner/app/src/main/java/com/jonysham/appdesigner/editor/model/Widgets.java",
+      "selection": {
+        "end": {
+          "column": 1,
+          "index": 1041,
+          "line": 23
+        },
+        "start": {
+          "column": 1,
+          "index": 1041,
+          "line": 23
+        }
+      }
+    }
+  ],
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/AppDesigner/app/src/main/java/com/jonysham/appdesigner/editor/model/Widgets.java"
+}
