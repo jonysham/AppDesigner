@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.icu.text.SimpleDateFormat;
 import android.icu.util.Calendar;
 import android.net.Uri;
+import android.util.TypedValue;
+import com.jonysham.appdesigner.AppDesigner;
 
 public class AndroidUtil {
 	
@@ -25,5 +27,9 @@ public class AndroidUtil {
         } catch (Throwable th) {
             th.printStackTrace();
         }
+	}
+	
+	public static int dp(int input) {
+		return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, input, AppDesigner.getInstance().getContext().getResources().getDisplayMetrics()); 
 	}
 }

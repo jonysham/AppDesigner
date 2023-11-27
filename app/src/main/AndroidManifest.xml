@@ -10,7 +10,7 @@
         android:supportsRtl="true" 
         android:theme="@style/AppTheme">
         <activity 
-            android:name=".activity.HomeActivity" 
+            android:name=".activity.LayoutEditorActivity" 
             android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
@@ -22,7 +22,7 @@
         </activity>
 		
 		<activity
-			android:name=".activity.LayoutEditorActivity"
+			android:name=".activity.HomeActivity"
 			android:screenOrientation="portrait"/>
 		
 		<activity
