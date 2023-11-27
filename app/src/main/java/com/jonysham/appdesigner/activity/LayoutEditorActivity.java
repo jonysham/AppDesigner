@@ -1,6 +1,7 @@
 package com.jonysham.appdesigner.activity;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
+import com.jonysham.appdesigner.editor.model.Widget;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.jonysham.appdesigner.BaseActivity;
 import com.jonysham.appdesigner.adapter.WidgetListAdapter;
 import com.jonysham.appdesigner.databinding.ActivityLayoutEditorBinding;
-import com.jonysham.appdesigner.editor.model.Widgets;
 import com.jonysham.appdesigner.R;
 
 public class LayoutEditorActivity extends BaseActivity {
@@ -48,12 +48,9 @@ public class LayoutEditorActivity extends BaseActivity {
 	}
 	
 	private void setupPaletteWidgets() {
-		List<String> items = new ArrayList<>();
-		items.add(Widgets.LINEAR_LAYOUT);
-		items.add(Widgets.RELATIVE_LAYOUT);
-		items.add(Widgets.FRAME_LAYOUT);
-		items.add(Widgets.BUTTON);
-		items.add(Widgets.SWITCH);
+		List<Widget> items = new ArrayList<>();
+		items.add(new Widget(Widget.LINEAR_LAYOUT));
+		items.add(new Widget(Widget.BUTTON));
 		
 		widgetList = binding.palette;
 		widgetList.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));

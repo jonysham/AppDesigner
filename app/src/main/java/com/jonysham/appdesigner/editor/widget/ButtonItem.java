@@ -7,20 +7,24 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.appcompat.content.res.AppCompatResources;
 import com.jonysham.appdesigner.R;
+import com.jonysham.appdesigner.editor.WidgetBound;
 
 public class ButtonItem extends Button implements BaseWidget {
-	private Drawable strokeDrawable;
+	private WidgetBound bound;
 	
 	public ButtonItem(Context context) {
 		super(context);
-		strokeDrawable = AppCompatResources.getDrawable(context, R.drawable.bg_stroke);
+	}
+	
+	@Override
+	public void setBound(WidgetBound bound) {
+		this.bound = bound;
 	}
 	
 	@Override
 	protected void dispatchDraw(Canvas canvas) {
 		super.dispatchDraw(canvas);
-		strokeDrawable.setBounds(0, 0, getWidth(), getHeight());
-		strokeDrawable.draw(canvas);
+		bound.draw(canvas, this);
 	}
 	
 	@Override

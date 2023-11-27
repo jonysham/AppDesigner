@@ -1,6 +1,6 @@
 package com.jonysham.appdesigner.editor.model;
 
-public final class Widgets {
+public class Widget {
 	public static final String LINEAR_LAYOUT = "LinearLayout";
 	public static final String ABSOLUTE_LAYOUT = "AbsoluteLayout";
 	public static final String RELATIVE_LAYOUT = "RelativeLayout";
@@ -18,7 +18,17 @@ public final class Widgets {
 	public static final String TEXT_VIEW = "TextView";
 	public static final String EDIT_TEXT = "EditText";
 	
-	public static String getClazz(String widgetName) {
-		return "com.jonysham.appdesigner.editor.widget." + widgetName + "Item";
+	private String name;
+	
+	public Widget(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public String getClazz() {
+		return "com.jonysham.appdesigner.editor.widget." + name + "Item";
 	}
 }

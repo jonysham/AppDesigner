@@ -10,13 +10,14 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.jonysham.appdesigner.databinding.ItemWidgetBinding;
+import com.jonysham.appdesigner.editor.model.Widget;
 import java.util.List;
 
 public class WidgetListAdapter extends RecyclerView.Adapter<WidgetListAdapter.Holder> {
 
 	private Context context;
 	private LayoutInflater inflater;
-	private List<String> widgets;
+	private List<Widget> widgets;
 	private OnStartDragListener onStartDragListener;
 	
 	public WidgetListAdapter(Context context) {
@@ -24,7 +25,7 @@ public class WidgetListAdapter extends RecyclerView.Adapter<WidgetListAdapter.Ho
 		inflater = LayoutInflater.from(context);
 	}
 	
-	public void submitWidgets(List<String> widgets) {
+	public void submitWidgets(List<Widget> widgets) {
 		this.widgets = widgets;
 		notifyDataSetChanged();
 	}
@@ -53,7 +54,7 @@ public class WidgetListAdapter extends RecyclerView.Adapter<WidgetListAdapter.Ho
 
     @Override
     public void onBindViewHolder(Holder holder, int pos) {
-		holder.name.setText(widgets.get(pos));
+		holder.name.setText(widgets.get(pos).getName());
 		holder.root.setOnLongClickListener(v -> {
 			v.startDragAndDrop(null, new View.DragShadowBuilder(v), widgets.get(pos), 0);
 			onStartDragListener.onStartDrag();

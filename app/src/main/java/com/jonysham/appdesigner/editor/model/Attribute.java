@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 
-public final class Attributes {
+public final class Attribute {
 	public static final String TYPE_ID = "id";
 	public static final String TYPE_ENUM = "enum";
 	public static final String TYPE_FLAG = "flag";
